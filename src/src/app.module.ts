@@ -6,7 +6,7 @@ import { ConversationsModule } from './conversations/conversations.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot('mongodb://localhost:27017/nest'),
+    MongooseModule.forRoot(process.env.MONGODB_URI as string),
     ConversationsModule,
   ],
   controllers: [AppController],
